@@ -9,9 +9,9 @@ const docs=db.get('pro');
 router.get('/welcome', function(req, res, next) {
   //res.render('index', { title: 'Express' });
 
-    docs.insert({first_name:"Prabhas"},function (err,docs){
+    docs.find({},function (err,docs){
         if(err) console.log(err);
-        else res.json(docs);
+        else res.json(docs[2]);
     })
 });
 router.get('/wel', function(req, res, next) {
