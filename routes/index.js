@@ -11,7 +11,7 @@ router.get('/welcome', function(req, res, next) {
 
     docs.find({},function (err,docs){
         if(err) console.log(err);
-        else res.json(docs[2]);
+        else res.json(docs);
     })
 });
 router.get('/wel', function(req, res, next) {
