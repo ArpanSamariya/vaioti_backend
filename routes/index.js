@@ -9,7 +9,7 @@ const docs=db.get('pro');
 router.get('/find', function(req, res, next) {
   //res.render('index', { title: 'Express' });
 
-    docs.find({},function (err,docs){
+    docs.find({"_id":"594bb06db5e01a001147d1a5"},function (err,docs){
         if(err) console.log(err);
         else res.json(docs);
     })
