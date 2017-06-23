@@ -9,13 +9,20 @@ const docs=db.get('pro');
 router.get('/welcome', function(req, res, next) {
   //res.render('index', { title: 'Express' });
 
-    docs.find({},function (err,docs){
+    docs.insert(collection,function (err,docs){
         if(err) console.log(err);
         else res.json(docs);
     })
 });
 router.get('/wel', function(req, res, next) {
     res.send('Sahi Chal rha hai!');
+});
+router.get('/push',function(req,res,next) {
+    docs.update({"id":"5e458"},{$push:{"group":{"name":"Shanu"}}},function (err,docs) {
+        if(err) console.log(err);
+        else res.json(docs);
+
+    })
 });
 
 module.exports = router;
