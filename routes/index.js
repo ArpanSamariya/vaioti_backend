@@ -18,7 +18,7 @@ router.get('/wel', function(req, res, next) {
     res.send('Sahi Chal rha hai!');
 });
 router.get('/push',function(req,res,next) {
-    docs.update({"id":"5e458"},{$push:{"group":{"name":"Shaktiman"}}},function (err,docs) {
+    docs.update({"id":"5e458"},{$push:{"group":{"name":"Lucky"}}},function (err,docs) {
         if(err) console.log(err);
         else res.json(docs);
 
