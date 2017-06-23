@@ -6,10 +6,18 @@ const db=require('monk')(URL);
 
 const docs=db.get('pro');
 /* GET home page. */
-router.get('/welcome', function(req, res, next) {
+router.get('/find', function(req, res, next) {
   //res.render('index', { title: 'Express' });
 
-    docs.insert(collection,function (err,docs){
+    docs.find({},function (err,docs){
+        if(err) console.log(err);
+        else res.json(docs);
+    })
+});
+router.get('/insert', function(req, res, next) {
+    //res.render('index', { title: 'Express' });
+
+    docs.insert({first_name:"Hardik"},function (err,docs){
         if(err) console.log(err);
         else res.json(docs);
     })
