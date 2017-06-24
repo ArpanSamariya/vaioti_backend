@@ -11,7 +11,7 @@ router.get('/find', function(req, res, next) {
 
     docs.find({"_id":"594bb06db5e01a001147d1a5"},function (err,docs){
         if(err) console.log(err);
-        else res.json(docs);
+        else res.json(docs[0]);
     })
 });
 router.get('/insert', function(req, res, next) {
